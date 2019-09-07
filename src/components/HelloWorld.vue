@@ -88,7 +88,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Hello Docker, tian and li!'
+      msg: 'Hello Docker, tian and li!tag 1.0.1'
     }
   }
 }
