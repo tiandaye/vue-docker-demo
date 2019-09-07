@@ -20,7 +20,8 @@ EXPOSE 80
 # 4. 删除工作目录的文件, 尤其是 node_modules 以减小镜像体积
 # 由于镜像构建的每一步都会产生新层
 # 为了减小镜像体积， 竟可能将一些同类操作, 集成到一个步骤中, 如下:
-RUN npm install \
+RUN npm config set registry https://registry.npm.taobao.org \
+	&& npm install \
 	&& npm run build \
 	&& cp -r dist/* /var/www/html \
 	&& rm -rf /app
